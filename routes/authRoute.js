@@ -5,12 +5,12 @@ const router = express.Router();
 import {
   registerController,
   loginController,
-  //   forgotPasswordController,
+  forgotPasswordController,
 } from "../controller/authController.js";
 
 router.route("/register").post(registerController);
 router.route("/login").post(loginController);
-// router.post("/forgot-password", forgotPasswordController);
+router.post("/forgot-password", forgotPasswordController);
 
 // router.get("/user-auth", requireSignIn, (req, res) => {
 //     res.status(200).send({ ok: true });
