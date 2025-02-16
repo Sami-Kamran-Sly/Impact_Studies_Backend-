@@ -3,7 +3,9 @@ import connectDBS from "./db/connected.js";
 import cors from "cors";
 import authRoutes from "./routes/authRoute.js";
 import dotenv from "dotenv";
+
 dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -16,8 +18,9 @@ app.use(
 app.use("/api/v1/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Server is runningd...");
+  res.send("Server is running...");
 });
+
 const PORT = process.env.PORT || 5000;
 
 const start = async () => {
@@ -29,4 +32,5 @@ const start = async () => {
   }
 };
 
-start();
+// ✅ Export the app for Vercel compatibility
+export default app;
