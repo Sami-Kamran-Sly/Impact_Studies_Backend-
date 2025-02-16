@@ -16,7 +16,7 @@ app.use(
 app.use("/api/v1/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Server is running...");
+  res.send("Server is runningd...");
 });
 const PORT = process.env.PORT || 5000;
 
